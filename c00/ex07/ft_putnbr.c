@@ -1,4 +1,3 @@
-// check man atoi
 #include <unistd.h>
 
 void	ft_putchar(char c)
