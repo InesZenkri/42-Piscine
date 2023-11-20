@@ -1,0 +1,34 @@
+ Here's a step-by-step guide for creating an SSH key, adding the public key to your repository, and updating the SSH key on the intranet:
+
+Create Your SSH Key:
+
+Open a terminal and run the following command to generate an SSH key pair:
+
+bash command : ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+This command will prompt you to enter a file to save the key. Press Enter to use the default location (~/.ssh/id_rsa) or provide a custom path. You can also enter a passphrase for added security.
+
+Add Your Public Key to Your Repository:
+
+After creating the key, you need to add the public key to your repository.
+
+Open the public key file with a text editor. The default is ~/.ssh/id_rsa.pub.
+bash command : cat ~/.ssh/id_rsa.pub
+Copy the contents of the public key.
+
+In your repository, create a file named id_rsa_pub and paste the public key into it.
+
+Commit and push the changes to your repository.
+
+Update Your SSH Key on the Intranet:
+    Log in to the intranet or the platform where you manage your SSH keys.
+
+Find the section for managing SSH keys.
+
+Add a new SSH key, and paste the contents of your public key (~/.ssh/id_rsa.pub).
+
+Save the changes.
+
+Now, your SSH key is associated with your repository, allowing you to push changes securely. Ensure that your local Git configuration uses the SSH URL for the repository (e.g., git@github.com:your-username/your-repo.git). You should be able to push changes to the git server using your SSH key.
+
+Important : Remember to keep your private key (~/.ssh/id_rsa) secure and never share it! The public key can be shared and associated with multiple services.
